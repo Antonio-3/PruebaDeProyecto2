@@ -101,7 +101,7 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.add_page()
                         pdf.set_font("Arial", size=12)
                         pdf.cell(200, 10, txt="Reporte JSJSJSJNDAOUWNDAN", ln=True, align='C')
-                        pdf.cell(200, 10, txt="Reporte de: ", seleccion_profeexd, ln=True, align='C')    
+                        pdf.cell(200, 10, txt="Reporte de: ", txt=seleccion_profeexd, ln=True, align='C')    
                         # Guardar PDF en un archivo temporal
                         pdf_output = 'output.pdf'
                         pdf.output(pdf_output)
