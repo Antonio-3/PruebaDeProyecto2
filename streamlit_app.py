@@ -124,12 +124,18 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         
                         # Cerrar la conexión
-                        conexion.close()        
+                        conexion.close()    
+                        return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
                         pdf.output("Reporte_Materia_Profe.pdf")
                         
-                        
-                with open(pdf_file, "rb") as f:
+                if st.button("Descargar Reporte del profesor"): 
                         pdf_file = generar_pdf()
+                        st.download_button(
+                                label="Descargar Reporte en PDF",
+                                data=pdf_content,
+                                file_name="Reporte_Materia_Profe.pdf",
+                                mime="application/pdf"
+                        )
                         st.download_button(label="Descargar Reporte del profesor", data=f, file_name="Reporte_Materia_Profe.pdf")
 
 
