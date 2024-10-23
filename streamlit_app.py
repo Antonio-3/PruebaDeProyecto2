@@ -132,14 +132,14 @@ if seleccion_menu == "Jefe de grupo":
                         
                         # Agregar los registros de materias al PDF
                         for materia in materiaprofe:
-                        pdf.cell(20, 10, str(materia[0]), 1)
-                        pdf.cell(80, 10, materia[1], 1)
-                        pdf.cell(60, 10, materia[2], 1)
-                        pdf.cell(30, 10, str(materia[3]), 1)
-                        pdf.cell(80, 10, materia[4], 1)
-                        pdf.cell(60, 10, materia[5], 1)
-                        pdf.cell(30, 10, str(materia[6]), 1)
-                        pdf.ln()
+                                pdf.cell(20, 10, str(materia[0]), 1)
+                                pdf.cell(80, 10, materia[1], 1)
+                                pdf.cell(60, 10, materia[2], 1)
+                                pdf.cell(30, 10, str(materia[3]), 1)
+                                pdf.cell(80, 10, materia[4], 1)
+                                pdf.cell(60, 10, materia[5], 1)
+                                pdf.cell(30, 10, str(materia[6]), 1)
+                                pdf.ln()
                         # Guardar el archivo PDF
                         pdf.output('Reporte_profe.pdf')
                         
