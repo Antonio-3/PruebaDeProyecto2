@@ -65,10 +65,6 @@ if seleccion_menu == "Jefe de grupo":
         st.write("  \n")
         st.write("  \n")
         st.write("  \n")
-        st.write("  \n")
-        st.write("  \n")
-        st.write("  \n")
-        st.write("  \n")
         
         beta_sign = """
         <span style="
@@ -86,6 +82,15 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Apartado de Reportes",
                 options=["Reporte por profesor","Reporte por materia", "Reporte global"]
         )
+        if seleccion_jefe == "Reporte por profesor":
+                st.write("Reporte por profesor")
+                        
+        if seleccion_jefe == "Reporte por materia":
+                st.write("Reporte por materia")
+                
+        if seleccion_jefe == "Reporte global":
+                st.write("Reporte global")
+        
 
 if seleccion_menu == "Administrador":
         beta_sign = """
