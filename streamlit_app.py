@@ -53,12 +53,11 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
-        st.write("xd\n")
-        st.write("xd\n")
-        st.write("XD\n")
-        st.write("xd\n")
-        st.write("xd\n")
-        st.write("XD\n")
+        st.write("  \n")
+        st.write("  \n")
+        st.write("  \n")
+        st.write("  \n")
+        st.write("  \n")
         
         beta_sign = """
         <span style="
