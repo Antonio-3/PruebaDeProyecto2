@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import sqlite3
 from fpdf import FPDF
+import mysql.connector
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
 st.sidebar.caption("Bienvenido Admin!.")
@@ -97,21 +98,31 @@ if seleccion_menu == "Jefe de grupo":
                 conexion.close()
                 # Función para generar el PDF
                 def generar_pdf():
+                        # Conectar a la base de datos
+                        cursor = conexion.cursor()
+                        cursor.execute("SELECT * FROM materiaprofe")
+                        datos = cursor.fetchall()
+                        
                         pdf = FPDF()
                         pdf.add_page()
+                        # Configurar fuente
                         pdf.set_font("Arial", size=12)
-                        pdf.cell(200, 10, txt="Reporte JSJSJSJNDAOUWNDAN", ln=True, align='C')
-                        pdf.cell(200, 10, txt="Reporte del profesor: ",ln=True, align='C')
-                        pdf.cell(200, 10, txt=seleccion_profeexd, ln=True, align='C')
-                        # Guardar PDF en un archivo temporal
-                        pdf_output = 'output.pdf'
-                        pdf.output(pdf_output)
-                        # Retornar el archivo generado
-                        return pdf_output
-                        # Abrir el archivo PDF y mostrar un enlace de descarga
+                        # Encabezados de la tabla
+                        encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
+                        for encabezado in encabezados:
+                            pdf.cell(40, 10, encabezado, 1, 0, 'C')
+                        pdf.ln()
                 pdf_file = generar_pdf()
+
+
+               
+
+                
+        
                 
         with open(pdf_file, "rb") as f:
+                
+                
                 st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
                         
         if seleccion_reporte == "Reporte por materia":
