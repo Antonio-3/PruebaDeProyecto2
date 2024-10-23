@@ -26,6 +26,22 @@ with st.sidebar:
         )
 
 if seleccion_menu == "Jefe de grupo":
-        st.title("Jefe de grupo")    
+        st.title("Jefe de grupo") 
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+                BETA
+        </span>
+        """
+        seleccion_menu2 = option_menu(
+                menu_title="Seleccione su carrera",
+                options=["ICI","ISET"]
+        )
 if seleccion_menu == "Administrador":
         st.title("Administrador")
