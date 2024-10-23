@@ -74,3 +74,4 @@ if seleccion_menu == "Administrador":
         seleccion_menu3 = option_menu(
                 menu_title="Que desea hacer",
                 options=["ICI","ISET"]
+        )
