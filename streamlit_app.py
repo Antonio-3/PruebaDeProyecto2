@@ -53,11 +53,11 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
-if seleccion_jefe == "ICI":
-        st.write("ICI")
-                
-if seleccion_jefe == "ISET":
-        st.write("ISET")
+        if seleccion_jefe == "ICI":
+                st.write("ICI")
+                        
+        if seleccion_jefe == "ISET":
+                st.write("ISET")
 
 if seleccion_menu == "Administrador":
         beta_sign = """
@@ -77,8 +77,8 @@ if seleccion_menu == "Administrador":
                 menu_title="Que desea hacer?",
                 options=["Agregar Datos","Eliminar Datos"]
         )
-if seleccion_admin == "Agregar Datos":
-        st.write("Agregar Datos")
-                
-if seleccion_admin == "Eliminar Datos":
-        st.write("Eliminar Datos")
+        if seleccion_admin == "Agregar Datos":
+                st.write("Agregar Datos")
+                        
+        if seleccion_admin == "Eliminar Datos":
+                st.write("Eliminar Datos")
