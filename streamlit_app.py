@@ -140,7 +140,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'LALALALALALALALLALALA', ln=True, align='C')
+                        pdf.cell(10, 10, 'LALALALALALALALLALALA', ln=True, align='C')
                         pdf.output('Reporte_profe.pdf')
                         
                         # Cerrar la conexión
