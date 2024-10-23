@@ -28,4 +28,4 @@ with st.sidebar:
 if seleccion_menu == "Jefe de grupo":
         st.title("Jefe de grupo")    
 if seleccion_menu == "Administrador":
-        st.title("Administrador"):
+        st.title("Administrador")
