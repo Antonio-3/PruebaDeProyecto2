@@ -111,12 +111,12 @@ if seleccion_menu == "Jefe de grupo":
                         # Encabezados de la tabla
                         encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
                         for encabezado in encabezados:
-                            pdf.cell(40, 10, encabezado, 1, 0, 'C')
-                        pdf.ln()
+                                pdf.cell(40, 10, encabezado, 1, 0, 'C')
+                                pdf.ln()                 
+                        pdf_file = generar_pdf()
                         
-                pdf_file = generar_pdf()
-        with open(pdf_file, "rb") as f:
-                st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
+                with open(pdf_file, "rb") as f:
+                        st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
 
 
                
