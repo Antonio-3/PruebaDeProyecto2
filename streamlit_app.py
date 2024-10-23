@@ -82,13 +82,13 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Apartado de Reportes",
                 options=["Reporte por profesor","Reporte por materia", "Reporte global"]
         )
-        if seleccion_jefe == "Reporte por profesor":
+        if seleccion_reporte == "Reporte por profesor":
                 st.write("Reporte por profesor")
                         
-        if seleccion_jefe == "Reporte por materia":
+        if seleccion_reporte == "Reporte por materia":
                 st.write("Reporte por materia")
                 
-        if seleccion_jefe == "Reporte global":
+        if seleccion_reporte == "Reporte global":
                 st.write("Reporte global")
         
 
