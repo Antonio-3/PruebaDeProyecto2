@@ -98,55 +98,59 @@ if seleccion_menu == "Jefe de grupo":
                 conexion.close()
                 # Función para generar el PDF
                 def generar_pdf():
-                    pdf = FPDF()
-                    pdf.add_page()
-                    pdf.set_font("Arial", size=12)
+                        pdf = FPDF()
+                        pdf.add_page()
+                        pdf.set_font("Arial", size=12)
                 
-                    # Encabezados de la tabla
-                    encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
-                    for encabezado in encabezados:
-                        pdf.cell(30, 10, encabezado, 1, 0, 'C')
-                    pdf.ln()
-                
-                    # Conectar a la base de datos
-                    conexion = mysql.connector.connect(
-                        host="localhost",
-                        user="tu_usuario",
-                        password="tu_contraseña",
-                        database="BasePrueba"
-                    )
-                    cursor = conexion.cursor()
-                    cursor.execute("SELECT * FROM materiaprofe")
-                    datos = cursor.fetchall()
-                
-                    # Añadir datos al PDF
-                    for fila in datos:
-                        pdf.cell(30, 10, str(fila[0]), 1)   # ID
-                        pdf.cell(30, 10, fila[1], 1)        # Profesor
-                        pdf.cell(30, 10, fila[2], 1)        # Materia
-                        pdf.cell(30, 10, fila[3], 1)        # Carrera
-                        pdf.cell(30, 10, fila[4].strftime('%Y-%m-%d'), 1)  # Fecha
-                        pdf.cell(30, 10, fila[5], 1)        # Horario
-                        pdf.cell(30, 10, 'Presente' if fila[6] == 1 else 'Ausente', 1)  # Asistencia
+                        # Encabezados de la tabla
+                        encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
+                        for encabezado in encabezados:
+                                pdf.cell(30, 10, encabezado, 1, 0, 'C')
                         pdf.ln()
                 
-                    # Cerrar la conexión
-                    conexion.close()
+                        # Conectar a la base de datos
+                        conexion = mysql.connector.connect(
+                                host="localhost",
+                                user="tu_usuario",
+                                password="tu_contraseña",
+                                database="BasePrueba"
+                        )
+
+
+                        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
+                        cursor = conexion.cursor()
+                        # Seleccionar todas las materias
+                        cursor.execute("SELECT * FROM materiaprofe")
+                        cursor = conexion.cursor()                     
+                        datos = cursor.fetchall()
                 
-                    # Retornar el contenido del PDF en bytes
-                    return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
+                            # Añadir datos al PDF
+                        for fila in datos:
+                                pdf.cell(30, 10, str(fila[0]), 1)   # ID
+                                pdf.cell(30, 10, fila[1], 1)        # Profesor
+                                pdf.cell(30, 10, fila[2], 1)        # Materia
+                                pdf.cell(30, 10, fila[3], 1)        # Carrera
+                                pdf.cell(30, 10, fila[4].strftime('%Y-%m-%d'), 1)  # Fecha
+                                pdf.cell(30, 10, fila[5], 1)        # Horario
+                                pdf.cell(30, 10, str(fila[6]), 1)# Asistencia
+                                pdf.ln()
+                
+                        # Cerrar la conexión
+                        conexion.close()
+                
+                        # Retornar el contenido del PDF en bytes
+                        return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
                 # Botón para generar el PDF
                 if st.button("Generar y Descargar Reporte"):
-                    # Generar el PDF
-                    pdf_content = generar_pdf()
-                
-                    # Crear un botón de descarga
-                    st.download_button(
+                        # Generar el PDF
+                        pdf_content = generar_pdf()
+                        # Crear un botón de descarga
+                        st.download_button(
                         label="Descargar Reporte en PDF",
                         data=pdf_content,
                         file_name="Reporte_Materia_Profe.pdf",
                         mime="application/pdf"
-                    )
+                        )
                                
 
 
