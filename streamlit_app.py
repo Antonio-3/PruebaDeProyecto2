@@ -98,34 +98,51 @@ if seleccion_menu == "Jefe de grupo":
                 conexion.close()
                 # Función para generar el PDF
                 def generar_pdf():
-                        pdf = FPDF()
-                        pdf.add_page()
-                        pdf.set_font("Arial", size=12)
-                
-                        # Encabezados de la tabla
-                        encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
-                        for encabezado in encabezados:
-                                pdf.cell(30, 10, encabezado, 1, 0, 'C')
-                        pdf.ln()
-                
                         # Conectar a la base de datos
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
-                        # Seleccionar todas las materias
-                        cursor.execute("SELECT * FROM materiaprofe")
-                        cursor = conexion.cursor()                     
-                        datosxd = cursor.fetchall()
-                
-                            # Añadir datos al PDF
-                        for fila in datosxd:
-                                pdf.cell(30, 10, str(fila[0]), 1)   # ID
-                                pdf.cell(30, 10, fila[1], 1)        # Profesor
-                                pdf.cell(30, 10, fila[2], 1)        # Materia
-                                pdf.cell(30, 10, fila[3], 1)        # Carrera
-                                pdf.cell(30, 10, fila[4].strftime('%Y-%m-%d'), 1)  # Fecha
-                                pdf.cell(30, 10, fila[5], 1)        # Horario
-                                pdf.cell(30, 10, str(fila[6]), 1)# Asistencia
-                                pdf.ln()
+                        cursor.execute('''
+                        SELECT * FROM materiaprofe
+                        ''')
+                        # Recuperar todos los registros
+                        materiaprofe = cursor.fetchall()
+                        # Crear una instancia de FPDF
+                        pdf = FPDF()
+                        pdf.set_auto_page_break(auto=True, margin=15)
+                        # Agregar una página
+                        pdf.add_page()
+                        # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
+                        pdf.set_font('Arial', 'B', 16)
+                        # Título del reporte
+                        pdf.cell(200, 10, 'Reporte de Materias', ln=True, align='C')
+                        # Espacio adicional
+                        pdf.ln(10)
+                        # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
+                        pdf.set_font('Arial', '', 12)
+
+                        # Encabezados de la tabla
+                        pdf.cell(20, 10, 'ID', 1)
+                        pdf.cell(80, 10, 'Profesor', 1)
+                        pdf.cell(60, 10, 'Materia', 1)
+                        pdf.cell(30, 10, 'Carrera', 1)
+                        pdf.cell(80, 10, 'Fecha', 1)
+                        pdf.cell(60, 10, 'Horario', 1)
+                        pdf.cell(30, 10, 'Asistencia', 1)
+                        pdf.ln()
+                        
+                        # Agregar los registros de materias al PDF
+                        for materia in materiaprofe:
+                        pdf.cell(20, 10, str(materia[0]), 1)
+                        pdf.cell(80, 10, materia[1], 1)
+                        pdf.cell(60, 10, materia[2], 1)
+                        pdf.cell(30, 10, str(materia[3]), 1)
+                        pdf.cell(80, 10, materia[4], 1)
+                        pdf.cell(60, 10, materia[5], 1)
+                        pdf.cell(30, 10, str(materia[6]), 1)
+                        pdf.ln()
+                        # Guardar el archivo PDF
+                        pdf.output('Reporte_profe.pdf')
+                        
                         # Cerrar la conexión
                         conexion.close()
                         # Retornar el contenido del PDF en bytes
@@ -134,7 +151,6 @@ if seleccion_menu == "Jefe de grupo":
                 if st.button("Generar y Descargar Reporte"):
                         # Generar el PDF
                         pdf_content = generar_pdf()
-                
                         # Crear un botón de descarga
                         st.download_button(
                                 label="Descargar Reporte en PDF",
