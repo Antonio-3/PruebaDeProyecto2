@@ -53,6 +53,25 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
+        
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+                BETA
+        </span>
+        """
+        st.caption("Bienvenido Jefe de grupo!")
+        seleccion_reporte = option_menu(
+                menu_title="Apartado de Reportes",
+                options=["Reporte por profesor","Reporte por materia", "Reporte global"]
+        )
+        
         if seleccion_jefe == "ICI":
                 st.write("ICI")
                         
