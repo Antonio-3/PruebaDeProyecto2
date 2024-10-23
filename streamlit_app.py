@@ -109,14 +109,6 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.ln()
                 
                         # Conectar a la base de datos
-                        conexion = mysql.connector.connect(
-                                host="localhost",
-                                user="tu_usuario",
-                                password="tu_contraseña",
-                                database="BasePrueba"
-                        )
-
-
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
                         # Seleccionar todas las materias
