@@ -49,9 +49,28 @@ if seleccion_menu == "Jefe de grupo":
                 BETA
         </span>
         """
+        st.captio("Jefe de grupo!")
         seleccion_menu2 = option_menu(
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
+
+
 if seleccion_menu == "Administrador":
         st.title("Administrador")
+        beta_sign = """
+        <span style="
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff5733;
+        padding: 5px 10px;
+        border-radius: 4px;
+        ">
+                BETA
+        </span>
+        """
+        st.captio("Bienvenido admin!")
+        seleccion_menu3 = option_menu(
+                menu_title="Que desea hacer",
+                options=["ICI","ISET"]
