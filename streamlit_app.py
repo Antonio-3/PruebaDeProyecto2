@@ -108,6 +108,8 @@ if seleccion_menu == "Jefe de grupo":
                         # Retornar el archivo generado
                         return pdf_output
                         # Abrir el archivo PDF y mostrar un enlace de descarga
+                pdf_file = generar_pdf()
+                
         with open(pdf_file, "rb") as f:
                 st.download_button(label="Descargar Reporte del profesor", data=f, file_name="PruebaReporteJSJSJXDD.pdf")
                         
