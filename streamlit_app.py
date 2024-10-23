@@ -103,7 +103,6 @@ if seleccion_menu == "Jefe de grupo":
                         cursor = conexion.cursor()
                         cursor.execute("SELECT * FROM materiaprofe")
                         datos = cursor.fetchall()
-                        
                         pdf = FPDF()
                         pdf.add_page()
                         # Configurar fuente
@@ -115,14 +114,16 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.ln()
                         # Agregar datos de la tabla
                         for fila in datos:
-                            pdf.cell(40, 10, str(fila[0]), 1)
-                            pdf.cell(40, 10, fila[1], 1)
-                            pdf.cell(40, 10, fila[2], 1)
-                            pdf.cell(40, 10, fila[3].strftime('%Y-%m-%d'), 1)  # Suponiendo que la fecha es un objeto datetime
-                            pdf.cell(40, 10, fila[4], 1)
-                            pdf.cell(40, 10, 'Presente' if fila[5] == 1 else 'Ausente', 1)
+                            pdf.cell(30, 10, str(fila[0]), 1)   # ID
+                            pdf.cell(30, 10, fila[1], 1)        # Profesor
+                            pdf.cell(30, 10, fila[2], 1)        # Materia
+                            pdf.cell(30, 10, fila[3], 1)        # Carrera
+                            pdf.cell(30, 10, fila[4].strftime('%Y-%m-%d'), 1)  # Fecha (ajustado para que se muestre como YYYY-MM-DD)
+                            pdf.cell(30, 10, fila[5], 1)        # Horario
+                            pdf.cell(30, 10, 'Presente' if fila[6] == 1 else 'Ausente', 1)  # Asistencia
                             pdf.ln()
                                 
+                        pdf.output("Reporte_Materia_Profe.pdf")
                         pdf_file = generar_pdf()
                         
                 with open(pdf_file, "rb") as f:
