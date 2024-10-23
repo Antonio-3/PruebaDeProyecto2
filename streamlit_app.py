@@ -73,8 +73,8 @@ if seleccion_menu == "Administrador":
                 menu_title="Que desea hacer?",
                 options=["Agregar Datos","Eliminar Datos"]
         )
-
         if seleccion_menu3 == "Agregar Datos":
                 st.write("Agregar Datos")
+                
          if seleccion_menu3 == "Eliminar Datos":
                 st.write("Eliminar Datos")
