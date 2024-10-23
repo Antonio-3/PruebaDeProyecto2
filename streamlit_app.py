@@ -122,11 +122,14 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(30, 10, fila[5], 1)        # Horario
                             pdf.cell(30, 10, 'Presente' if fila[6] == 1 else 'Ausente', 1)  # Asistencia
                             pdf.ln()
-                                
+                        
+                        # Cerrar la conexión
+                        conexion.close()        
                         pdf.output("Reporte_Materia_Profe.pdf")
-                        pdf_file = generar_pdf(pdf.output)
+                        
                         
                 with open(pdf_file, "rb") as f:
+                        pdf_file = generar_pdf()
                         st.download_button(label="Descargar Reporte del profesor", data=f, file_name="Reporte_Materia_Profe.pdf")
 
 
