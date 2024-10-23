@@ -135,11 +135,6 @@ if seleccion_menu == "Jefe de grupo":
                 
                     # Retornar el contenido del PDF en bytes
                     return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
-                
-                
-                # Crear la interfaz de Streamlit
-                st.title("Generador de Reportes - Materia y Profesores")
-                
                 # Botón para generar el PDF
                 if st.button("Generar y Descargar Reporte"):
                     # Generar el PDF
