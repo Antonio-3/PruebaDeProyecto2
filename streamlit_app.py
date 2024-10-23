@@ -114,10 +114,10 @@ if seleccion_menu == "Jefe de grupo":
                         # Seleccionar todas las materias
                         cursor.execute("SELECT * FROM materiaprofe")
                         cursor = conexion.cursor()                     
-                        datos = cursor.fetchall()
+                        datosxd = cursor.fetchall()
                 
                             # Añadir datos al PDF
-                        for fila in datos:
+                        for fila in datosxd:
                                 pdf.cell(30, 10, str(fila[0]), 1)   # ID
                                 pdf.cell(30, 10, fila[1], 1)        # Profesor
                                 pdf.cell(30, 10, fila[2], 1)        # Materia
@@ -126,23 +126,16 @@ if seleccion_menu == "Jefe de grupo":
                                 pdf.cell(30, 10, fila[5], 1)        # Horario
                                 pdf.cell(30, 10, str(fila[6]), 1)# Asistencia
                                 pdf.ln()
-                
                         # Cerrar la conexión
                         conexion.close()
-                
                         # Retornar el contenido del PDF en bytes
                         return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
                 # Botón para generar el PDF
                 if st.button("Generar y Descargar Reporte"):
-                        # Generar el PDF
                         pdf_content = generar_pdf()
-                        # Crear un botón de descarga
-                        st.download_button(
-                        label="Descargar Reporte en PDF",
                         data=pdf_content,
                         file_name="Reporte_Materia_Profe.pdf",
                         mime="application/pdf"
-                        )
                                
 
 
