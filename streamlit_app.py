@@ -25,6 +25,9 @@ with st.sidebar:
             options=["","Jefe de grupo","Administrador"]
         )
 
+if seleccion_menu == "":
+        st.image(image='img/tumblr_lt7bswjhFd1r4ghkoo1_250.webp',caption="")
+
 if seleccion_menu == "Jefe de grupo":
         st.title("Jefe de grupo") 
         beta_sign = """
