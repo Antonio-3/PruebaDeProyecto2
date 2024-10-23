@@ -102,7 +102,7 @@ if seleccion_menu == "Jefe de grupo":
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
                         cursor.execute('''
-                        SELECT * FROM materiaprofe
+                        SELECT * FROM materiaprofe WHERE Proferos='Ana Morales'
                         ''')
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
