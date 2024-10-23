@@ -78,3 +78,9 @@ if seleccion_admin == "Agregar Datos":
                 
 if seleccion_admin == "Eliminar Datos":
         st.write("Eliminar Datos")
+
+if seleccion_jefe == "ICI":
+        st.write("ICI")
+                
+if seleccion_jefe == "ISET":
+        st.write("ISET")
