@@ -102,7 +102,7 @@ if seleccion_menu == "Jefe de grupo":
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
                         cursor.execute('''
-                        SELECT * FROM materiaprofe WHERE Profesor='Ana Morales'
+                        SELECT * FROM materiaprofe WHERE Profesor=seleccion_profeexd
                         ''')
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
@@ -114,7 +114,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
                         pdf.set_font('Arial', 'B', 16)
                         # Título del reporte
-                        pdf.cell(200, 10, 'Reporte de Materias', ln=True, align='C')
+                        pdf.cell(200, 10, 'Reporte de Profesor', ln=True, align='C')
                         # Espacio adicional
                         pdf.ln(10)
                         # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
