@@ -49,7 +49,7 @@ if seleccion_menu == "Jefe de grupo":
                 BETA
         </span>
         """
-        st.captio("Jefe de grupo!")
+        st.caption("Jefe de grupo!")
         seleccion_menu2 = option_menu(
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
@@ -70,7 +70,7 @@ if seleccion_menu == "Administrador":
                 BETA
         </span>
         """
-        st.captio("Bienvenido admin!")
+        st.caption("Bienvenido admin!")
         seleccion_menu3 = option_menu(
                 menu_title="Que desea hacer",
                 options=["ICI","ISET"]
