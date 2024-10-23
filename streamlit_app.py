@@ -148,12 +148,18 @@ if seleccion_menu == "Jefe de grupo":
                         # Retornar el contenido del PDF en bytes
                         return pdf.output(dest='S').encode('latin1')  # Dest 'S' devuelve el contenido como un string
                 # Botón para generar el PDF
-                if st.download_button("Descargar Reporte"):
+                if st.button("Generar Reporte"):
                         # Generar el PDF
                         pdf_content = generar_pdf()
-                        data=pdf_content
-                        file_name="Reporte_Materia_Profe.pdf"
-                        mime="application/pdf"
+                        st.caption("100% completado...")
+                        # Crear un botón de descarga
+                        st.download_button(
+                                label="Descargar Reporte en PDF",
+                                data=pdf_content,
+                                file_name="Reporte_Materia_Profe.pdf",
+                                mime="application/pdf"
+                        )
+
                                
 
 
