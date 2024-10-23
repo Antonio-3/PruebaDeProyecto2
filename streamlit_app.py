@@ -112,7 +112,17 @@ if seleccion_menu == "Jefe de grupo":
                         encabezados = ['ID', 'Profesor', 'Materia', 'Carrera', 'Fecha', 'Horario', 'Asistencia']
                         for encabezado in encabezados:
                                 pdf.cell(40, 10, encabezado, 1, 0, 'C')
-                                pdf.ln()                 
+                        pdf.ln()
+                        # Agregar datos de la tabla
+                        for fila in datos:
+                            pdf.cell(40, 10, str(fila[0]), 1)
+                            pdf.cell(40, 10, fila[1], 1)
+                            pdf.cell(40, 10, fila[2], 1)
+                            pdf.cell(40, 10, fila[3].strftime('%Y-%m-%d'), 1)  # Suponiendo que la fecha es un objeto datetime
+                            pdf.cell(40, 10, fila[4], 1)
+                            pdf.cell(40, 10, 'Presente' if fila[5] == 1 else 'Ausente', 1)
+                            pdf.ln()
+                                
                         pdf_file = generar_pdf()
                         
                 with open(pdf_file, "rb") as f:
