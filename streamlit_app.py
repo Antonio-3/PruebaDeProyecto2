@@ -124,7 +124,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                                 
                         pdf.output("Reporte_Materia_Profe.pdf")
-                        pdf_file = generar_pdf()
+                        pdf_file = generar_pdf(pdf.output)
                         
                 with open(pdf_file, "rb") as f:
                         st.download_button(label="Descargar Reporte del profesor", data=f, file_name="Reporte_Materia_Profe.pdf")
