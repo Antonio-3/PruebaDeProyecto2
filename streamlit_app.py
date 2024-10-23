@@ -10,12 +10,12 @@ st.sidebar.caption("Bienvenido Admin!.")
 with st.sidebar:
         beta_sign = """
         <span style="
-        font-size: 10px;
+        font-size: 12px;
         font-weight: bold;
         color: #ffffff;
         background-color: #ff5733;
-        padding: 10px 15px;
-        border-radius: 10px;
+        padding: 15px;
+        border-radius: 5px;
         ">
             BETA
         </span>
