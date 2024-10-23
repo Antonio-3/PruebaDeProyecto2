@@ -14,7 +14,7 @@ with st.sidebar:
         font-weight: bold;
         color: #ffffff;
         background-color: #ff5733;
-        padding: 5px 10px;
+        padding: 1px 15px;
         border-radius: 4px;
         ">
             BETA
