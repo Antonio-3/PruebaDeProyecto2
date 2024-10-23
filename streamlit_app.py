@@ -26,7 +26,7 @@ with st.sidebar:
         )
 
 if seleccion_menu == "":
-        st.image(image='img/tumblr_lt7bswjhFd1r4ghkoo1_250.webp',caption="")
+        st.video(video='img/Cat dancing to Chinese song #cat #catdancing #dancing #china #chinese #科目三 #科目三舞蹈 - kittyhaerin🫶🏻 (720p, h264, youtube).mp4',caption="")
 
 if seleccion_menu == "Jefe de grupo":
         st.title("Jefe de grupo") 
