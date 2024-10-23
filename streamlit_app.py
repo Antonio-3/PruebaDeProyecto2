@@ -120,26 +120,26 @@ if seleccion_menu == "Jefe de grupo":
                         # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
                         pdf.set_font('Arial', '', 12)
 
-                        # Encabezados de la tabla
-                        pdf.cell(20, 10, 'ID', 1)
-                        pdf.cell(80, 10, 'Profesor', 1)
-                        pdf.cell(60, 10, 'Materia', 1)
-                        pdf.cell(30, 10, 'Carrera', 1)
-                        pdf.cell(80, 10, 'Fecha', 1)
-                        pdf.cell(60, 10, 'Horario', 1)
-                        pdf.cell(30, 10, 'Asistencia', 1)
+                        # Encabezados de la tabla ajustados
+                        pdf.cell(15, 10, 'ID', 1)          # Reducido a 15
+                        pdf.cell(50, 10, 'Profesor', 1)    # Reducido a 50
+                        pdf.cell(40, 10, 'Materia', 1)     # Reducido a 40
+                        pdf.cell(30, 10, 'Carrera', 1)     # Igual
+                        pdf.cell(30, 10, 'Fecha', 1)       # Reducido a 30
+                        pdf.cell(30, 10, 'Horario', 1)     # Reducido a 30
+                        pdf.cell(30, 10, 'Asistencia', 1)  # Igual
                         pdf.ln()
                         
-                        # Agregar los registros de materias al PDF
+                        # Agregar los registros de materias al PDF con ajustes
                         for materia in materiaprofe:
-                                pdf.cell(20, 10, str(materia[0]), 1)
-                                pdf.cell(80, 10, materia[1], 1)
-                                pdf.cell(60, 10, materia[2], 1)
-                                pdf.cell(30, 10, str(materia[3]), 1)
-                                pdf.cell(80, 10, materia[4], 1)
-                                pdf.cell(60, 10, materia[5], 1)
-                                pdf.cell(30, 10, str(materia[6]), 1)
-                                pdf.ln()
+                            pdf.cell(15, 10, str(materia[0]), 1)    # Ajustado a 15
+                            pdf.cell(50, 10, materia[1], 1)         # Ajustado a 50
+                            pdf.cell(40, 10, materia[2], 1)         # Ajustado a 40
+                            pdf.cell(30, 10, str(materia[3]), 1)    # Igual
+                            pdf.cell(30, 10, materia[4], 1)         # Ajustado a 30
+                            pdf.cell(30, 10, materia[5], 1)         # Ajustado a 30
+                            pdf.cell(30, 10, str(materia[6]), 1)    # Igual
+                            pdf.ln()
                         # Guardar el archivo PDF
                         pdf.output('Reporte_profe.pdf')
                         
