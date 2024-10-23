@@ -49,7 +49,7 @@ if seleccion_menu == "Jefe de grupo":
         </span>
         """
         st.caption("Bienvenido Jefe de grupo!")
-        seleccion_menu2 = option_menu(
+        seleccion_jefe = option_menu(
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
@@ -69,12 +69,12 @@ if seleccion_menu == "Administrador":
         </span>
         """
         st.caption("Bienvenido admin!")
-        seleccion_menu3 = option_menu(
+        seleccion_admin = option_menu(
                 menu_title="Que desea hacer?",
                 options=["Agregar Datos","Eliminar Datos"]
         )
-if seleccion_menu3 == "Agregar Datos":
+if seleccion_admin == "Agregar Datos":
         st.write("Agregar Datos")
                 
-if seleccion_menu3 == "Eliminar Datos":
+if seleccion_admin == "Eliminar Datos":
         st.write("Eliminar Datos")
