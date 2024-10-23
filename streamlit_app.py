@@ -141,7 +141,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Guardar el archivo PDF
                         
                         pdf.cell(50, 10, 'El profesor: ', ln=False, align='C')
-                        pdf.cell(5, 10, seleccion_profeexd, ln=False, align='C')
+                        pdf.cell(2, 10, seleccion_profeexd, ln=False, align='C')
                         pdf.output('Reporte_profe.pdf')
                         
                         # Cerrar la conexión
