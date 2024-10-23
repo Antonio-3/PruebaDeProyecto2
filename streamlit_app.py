@@ -26,7 +26,14 @@ with st.sidebar:
         )
 
 if seleccion_menu == "":
-        st.video(video='img/Cat dancing to Chinese song #cat #catdancing #dancing #china #chinese #科目三 #科目三舞蹈 - kittyhaerin🫶🏻 (720p, h264, youtube).mp4',caption="")
+        st.image(image='img/LogoUnixd.png', caption="", use_column_width=True)
+        st.write("\n")
+        st.title("Bienvenidos a nuestro proyecto :)")
+        st.write("Somos Antonio, Perla , Josue y Danahy, estudiantes de la Universidad De Colima. ")
+        st.write("\n")
+        st.write("Este proyecto tiene como objetivo crear un programa para que un admistrador pueda consultar o asignar las faltas de asistencia de profesores, materias, o dependiendo del programa educativo")
+        st.write("\n")
+        st.write("A lo largo de esta página, encontrarás información sobre nuestro trabajo, ideas y logros a lo largo del proceso. Esperamos que disfrutes navegando por nuestra página y descubras más sobre este proyecto.")
 
 if seleccion_menu == "Jefe de grupo":
         st.title("Jefe de grupo") 
