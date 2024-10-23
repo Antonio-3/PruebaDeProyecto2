@@ -53,6 +53,11 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
         )
+        if seleccion_jefe == "ICI":
+                st.write("ICI")
+                        
+        if seleccion_jefe == "ISET":
+                st.write("ISET")
         st.write("  \n")
         st.write("  \n")
         st.write("  \n")
@@ -81,12 +86,6 @@ if seleccion_menu == "Jefe de grupo":
                 menu_title="Apartado de Reportes",
                 options=["Reporte por profesor","Reporte por materia", "Reporte global"]
         )
-        
-        if seleccion_jefe == "ICI":
-                st.write("ICI")
-                        
-        if seleccion_jefe == "ISET":
-                st.write("ISET")
 
 if seleccion_menu == "Administrador":
         beta_sign = """
