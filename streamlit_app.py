@@ -22,7 +22,7 @@ with st.sidebar:
         """
         seleccion_menu = option_menu(
             menu_title="Seleccione su Rol",
-            options=["Jefe de grupo","Administrador"]
+            options=["","Jefe de grupo","Administrador"]
         )
 
 if seleccion_menu == "Jefe de grupo":
