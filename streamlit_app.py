@@ -36,7 +36,6 @@ if seleccion_menu == "":
         st.write("A lo largo de esta página, encontrarás información sobre nuestro trabajo, ideas y logros a lo largo del proceso. Esperamos que disfrutes navegando por nuestra página y descubras más sobre este proyecto.")
 
 if seleccion_menu == "Jefe de grupo":
-        st.title("Jefe de grupo") 
         beta_sign = """
         <span style="
         font-size: 10px;
@@ -49,7 +48,7 @@ if seleccion_menu == "Jefe de grupo":
                 BETA
         </span>
         """
-        st.caption("Jefe de grupo!")
+        st.caption("Bienvenido Jefe de grupo!")
         seleccion_menu2 = option_menu(
                 menu_title="Seleccione su carrera",
                 options=["ICI","ISET"]
@@ -57,7 +56,6 @@ if seleccion_menu == "Jefe de grupo":
 
 
 if seleccion_menu == "Administrador":
-        st.title("Administrador")
         beta_sign = """
         <span style="
         font-size: 10px;
