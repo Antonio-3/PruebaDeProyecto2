@@ -99,6 +99,7 @@ if seleccion_menu == "Jefe de grupo":
                 # Función para generar el PDF
                 def generar_pdf():
                         # Conectar a la base de datos
+                        conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
                         cursor.execute("SELECT * FROM materiaprofe")
                         datos = cursor.fetchall()
