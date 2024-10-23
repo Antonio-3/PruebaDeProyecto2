@@ -70,6 +70,11 @@ if seleccion_menu == "Administrador":
         """
         st.caption("Bienvenido admin!")
         seleccion_menu3 = option_menu(
-                menu_title="Que desea hacer",
-                options=["ICI","ISET"]
+                menu_title="Que desea hacer?",
+                options=["Agregar Datos","Eliminar Datos"]
         )
+
+        if seleccion_menu3 == "Agregar Datos"
+                st.write("Agregar Datos")
+         if seleccion_menu3 == "Eliminar Datos"
+                st.write("Eliminar Datos")
