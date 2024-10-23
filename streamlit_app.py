@@ -83,10 +83,16 @@ if seleccion_menu == "Jefe de grupo":
                 options=["Reporte por profesor","Reporte por materia", "Reporte global"]
         )
         if seleccion_reporte == "Reporte por profesor":
+                st.write("  \n")
+                st.write("  \n")
+                st.write("  \n")
+                st.write("  \n")
                 st.write("Reporte por profesor")
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                st.write("  \n")
+                st.write("  \n")
                 seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
                 cursor = conexion.cursor()
                 conexion.close()
