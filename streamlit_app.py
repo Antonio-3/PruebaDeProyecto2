@@ -270,7 +270,8 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(20, 10, str(materia[6]), 1)   
                             pdf.ln()
                         # Guardar el archivo PDF
-                        
+                        pdf.cell(200, 10, '', ln=True)
+                        pdf.cell(200, 10, '', ln=True)
                         pdf.cell(200, 10, 'Este informe detalla la impartición de clases de la materia '+materia[2]+ ' indicando si la materia fue enseñada  ', ln=True)
                         pdf.cell(200, 10, 'por diferentes profesores a lo largo del periodo y la asistencia correspondiente de cada uno.', ln=True)
                         pdf.output('Reporte_profe.pdf')
