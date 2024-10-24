@@ -306,7 +306,7 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(200, 10, 'Este porcentaje refleja un compromiso moderado de los docentes con su responsabilidad de asistir a', 1)
                         pdf.cell(200, 10, 'clases y cumplir con sus horarios. La asistencia regular de los maestros es fundamental para ', 1)
                         pdf.cell(200, 10, 'garantizar la continuidad del proceso educativo y el apoyo a los estudiantes, ya que su presencia es', 1)
-                        pdf.cell(200, 10, 'crucial para el desarrollo de las actividades académicas'%.', 1)
+                        pdf.cell(200, 10, 'crucial para el desarrollo de las actividades académicas', 1)
         
                         pdf.output('Reporte_Global.pdf')
                         
