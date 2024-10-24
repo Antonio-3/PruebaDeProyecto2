@@ -225,7 +225,7 @@ if seleccion_menu == "Jefe de grupo":
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                 df = pd.read_sql("SELECT DISTINCT Materia FROM materiaprofe;", conexion)
                 st.write("  \n")
-                seleccion_materiaxd = st.selectbox('Selecciona un profesor:', df['Materia'])
+                seleccion_materiaxd = st.selectbox('Selecciona un materia:', df['Materia'])
                 cursor = conexion.cursor()
                 conexion.close()
                 # Función para generar el PDF
