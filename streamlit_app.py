@@ -290,7 +290,7 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.set_font('Arial', '', 12)
 
                         # Encabezados de la tabla ajustados
-                        pdf.cell(60, 10, 'Tasa de cumplimiento %', 1)
+                        pdf.cell(60, 10, 'Tasa de cumplimiento', 1)
                         pdf.ln()
                         
                         # Agregar los registros de materias al PDF con ajustes
@@ -299,7 +299,8 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'La tasa de cumpliento de asistencias en las carreras ICI y ISET es cerca del: ' + str(materia[0]) + '% y ', ln=True, align='C')
+                        pdf.cell(200, 10, 'La tasa de cumplimiento de asistencias en las carreras ICI y ISET es cerca del: ' + str(materia[0]) + '% y ', ln=True, align='C')
+                         pdf.cell(200, 10, 'Cera del: 12% de incumplimieto de asistencas ', ln=True, align='C')
                         pdf.output('Reporte_Global.pdf')
                         
                         # Cerrar la conexión
