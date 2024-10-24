@@ -115,7 +115,12 @@ if seleccion_menu == "Jefe de grupo":
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
                         # Extraer el primer valor si es una tupla
-                        ConvertioXD_numero = str(Cantidadmateriasprofe[0]) if isinstance(Cantidadmateriasprofe, (tuple, list)) else str(Cantidadmateriasprofe)
+
+                        if isinstance(Cantidadmateriasprofe, (tuple, list)):
+                                ConvertioXD_numero = str(Cantidadmateriasprofe[0])
+                        else:
+                                ConvertioXD_numero = str(Cantidadmateriasprofe)
+                                
                         # Crear una instancia de FPDF
                         pdf = FPDF()
                         pdf.set_auto_page_break(auto=True, margin=15)
