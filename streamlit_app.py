@@ -140,8 +140,8 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'El profesor:',seleccion_profeexd,' Ha impartido [ ] materias, durante [ periodo de tiempo] ', ln=True, align='C')
-                        pdf.cell(200, 10, 'y de esas materias ha asistido [ ] y ha faltado [ ]', ln=True, align='C')
+                        pdf.cell(200, 10, 'El profesor: ', ln=False, align='C')
+                        pdf.cell(200, 10, seleccion_profeexd, ln=False, align='C')
                         pdf.output('Reporte_profe.pdf')
                         
                         # Cerrar la conexión
