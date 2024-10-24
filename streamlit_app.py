@@ -290,12 +290,12 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.set_font('Arial', '', 12)
 
                         # Encabezados de la tabla ajustados
-                        pdf.cell(20, 10, 'Tasa de cumplimiento %', 1)
+                        pdf.cell(40, 10, 'Tasa de cumplimiento %', 1)
                         pdf.ln()
                         
                         # Agregar los registros de materias al PDF con ajustes
                         for materia in materiaprofe:
-                            pdf.cell(20, 10, str(materia[0]) + '%', 1)  
+                            pdf.cell(40, 10, str(materia[0]) + '%', 1)  
                             pdf.ln()
                         # Guardar el archivo PDF
                         
