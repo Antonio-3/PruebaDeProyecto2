@@ -147,9 +147,15 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(20, 10, 'El profesor: ', ln=True, align='C')
-                        pdf.cell(20, 10, seleccion_profeexd, ln=False, align='C')
+                        pdf.cell(200, 10, 'El profesor ' + str(materia[0]) + ' imparte un total de' + 'materias, cubriendo diferentes áreas', ln=True)
+                        pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
+                        pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo, asistiendo a'+'clases de las programadas.', ln=True)
+                        pdf.cell(200, 10, 'No obstante, ha tenido'+'ausencias, lo cual puede deberse a diversas circunstancias, como asuntos personales o imprevistos, que en ocasiones son inevitables.', ln=True)
+                        pdf.cell(200, 10, 'No obstante, ha tenido'+'ausencias, lo cual puede deberse a diversas circunstancias, como asuntos personales o imprevistos, que en ocasiones son inevitables.', ln=True)
+                        pdf.cell(200, 10, 'ya que permite la continuidad de los contenidos y facilita el progreso de los estudiantes en las materias impartidas.', ln=True) 
+                        pdf.cell(200, 10, 'Sin embargo, las ausencias también son comprensibles en ciertos contextos, siempre que no afecten significativamente el desarrollo académico de los alumnos. ', ln=True)                      
                         pdf.output('Reporte_profe.pdf')
+
                         
                         # Cerrar la conexión
                         conexion.close()
@@ -301,7 +307,6 @@ if seleccion_menu == "Jefe de grupo":
                         for materia in materiaprofe:
                             pdf.cell(60, 10, str(materia[0]) + '%', 1)  
                             pdf.ln()
-                        # Guardar el archivo PDF
                         pdf.cell(200, 10, 'La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al ' + str(materia[0]) + '%.', ln=True)
                         pdf.cell(200, 10, 'Este porcentaje refleja un compromiso moderado de los docentes con su responsabilidad de asistir a', ln=True)
                         pdf.cell(200, 10, 'clases y cumplir con sus horarios. La asistencia regular de los maestros es fundamental para ', ln=True)
