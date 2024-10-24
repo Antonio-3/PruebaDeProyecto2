@@ -319,7 +319,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Establecer el tipo de fuente (Arial, negrita, tamaño 16)
                         pdf.set_font('Arial', 'B', 16)
                         # Título del reporte
-                        pdf.cell(200, 10, 'Reporte de Profesor', ln=True, align='C')
+                        pdf.cell(200, 10, 'Reporte Global', ln=True, align='C')
                         # Espacio adicional
                         pdf.ln(10)
                         # Establecer el tipo de fuente para el contenido (Arial, tamaño 12)
