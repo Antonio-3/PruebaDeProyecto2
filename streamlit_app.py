@@ -111,19 +111,28 @@ if seleccion_menu == "Jefe de grupo":
                         cursor2 = conexion.cursor()
                         cursor3 = conexion.cursor()
                         cursor4 = conexion.cursor()
+                        cursor5 = conexion.cursor()
+                        cursor6 = conexion.cursor()
                         cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         cursor2.execute("SELECT COUNT(Materia) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         cursor3.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=1",(seleccion_profeexd,))
                         cursor4.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=0",(seleccion_profeexd,))
+                        cursor5.execute("SELECT MIN(Fecha) FROM materiaprofe WHERE Profesor = Juan Pérez",(seleccion_profeexd,))
+                        cursor6.execute("SELECT MAX(Fecha) FROM materiaprofe WHERE Profesor = Juan Pérez",(seleccion_profeexd,))
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
                         Asistidamateriaprofe = cursor3.fetchall()
                         Faltamateriaprofe = cursor4.fetchall()
+                        FechaMax = cursor5.fetchall()
+                        FechaMin = cursor6.fetchall()
                         # Extraer el primer valor si es una tupla
                         ConvertioXD_numero = str(Cantidadmateriasprofe[0]) if isinstance(Cantidadmateriasprofe, (tuple, list)) else str(Cantidadmateriasprofe)
                         ConvertioXD_Asistencia = str(Asistidamateriaprofe[0]) if isinstance(Asistidamateriaprofe, (tuple, list)) else str(Asistidamateriaprofe) 
                         ConvertioXD_Falta = str(Faltamateriaprofe[0]) if isinstance(Faltamateriaprofe, (tuple, list)) else str(Faltamateriaprofe) 
+                        
+                        ConvertioXD_FCHMX = str(FechaMax[0]) if isinstance(FechaMax, (tuple, list)) else str(FechaMax) 
+                        ConvertioXD_FCHMN = str(FechaMin[0]) if isinstance(FechaMin, (tuple, list)) else str(FechaMin) 
                         # Crear una instancia de FPDF
                         pdf = FPDF()
                         pdf.set_auto_page_break(auto=True, margin=15)
@@ -162,7 +171,7 @@ if seleccion_menu == "Jefe de grupo":
                         
                         pdf.cell(200, 10, 'El profesor ' + materia[1]+ ' imparte un total de ' +ConvertioXD_numero+ '  materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
-                        pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo,', ln=True)
+                        pdf.cell(200, 10, 'Durante el periodo de tiempo desde' +ConvertioXD_FCHMN+ ' - '+ConvertioXD_FCHMX+' , el profesor ha demostrado un alto nivel de compromiso con su trabajo,', ln=True)
                         pdf.cell(200, 10, 'asistiendo a'+ConvertioXD_Asistencia+' clases de las programadas. No obstante, ha tenido '+ConvertioXD_Falta+' ausencias, lo cual puede deberse', ln=True)
                         pdf.cell(200, 10, 'a diversas circunstancias, como asuntos personales o imprevistos, que en ocasiones son inevitables.', ln=True)
                         pdf.cell(200, 10, 'ya que permite la continuidad de los contenidos y facilita el progreso de los estudiantes en las ', ln=True) 
