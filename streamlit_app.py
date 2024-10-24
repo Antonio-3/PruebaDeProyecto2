@@ -168,7 +168,6 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(20, 10, str(materia[6]), 1)    
                             pdf.ln()
                         # Guardar el archivo PDF
-                        
                         pdf.cell(200, 10, 'El profesor ' + materia[1]+ ' imparte un total de ' +ConvertioXD_numero+ '  materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
                         pdf.cell(200, 10, 'Durante el periodo de tiempo desde: ' +ConvertioXD_FCHMN+ ' - '+ConvertioXD_FCHMX+' , el profesor ha', ln=True)
@@ -272,6 +271,9 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
+                        pdf.cell(200, 10, 'Este informe detalla la impartición de clases de la materia '+materiaprofe[2]+ 'indicando si la materia ', ln=True)
+                        pdf.cell(200, 10, 'fue enseñada por diferentes profesores a lo largo del periodo y la asistencia correspondiente de cada uno.', ln=True)
+                        pdf.output('Reporte_profe.pdf')
                         pdf.cell(20, 10, 'La materia: ', ln=True, align='C')
                         pdf.cell(20, 10, seleccion_materiaxd, ln=False, align='C')
                         pdf.output('Reporte_profe.pdf')
