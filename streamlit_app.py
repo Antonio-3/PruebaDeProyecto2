@@ -299,7 +299,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(20, 10, 'La tasa de cumpliento de asistencias es cerca del: ', ln=True, align='C')
+                        pdf.cell(75, 10, 'La tasa de cumpliento de asistencias es cerca del: ' + str(materia[0]) + '%', ln=True, align='C')
                         pdf.output('Reporte_Global.pdf')
                         
                         # Cerrar la conexión
