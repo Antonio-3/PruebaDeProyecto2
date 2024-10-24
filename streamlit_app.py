@@ -152,9 +152,9 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo,', ln=True)
                         pdf.cell(200, 10, 'asistiendo a'+'clases de las programadas. No obstante, ha tenido '+'ausencias, lo cual puede deberse', ln=True)
                         pdf.cell(200, 10, 'a diversas circunstancias, como asuntos personales o imprevistos, que en ocasiones son inevitables.', ln=True)
-                        pdf.cell(200, 10, 'ya que permite la continuidad de los contenidos y facilita el progreso de los estudiantes en las materias impartidas.', ln=True) 
-                        pdf.cell(200, 10, 'Sin embargo, las ausencias también son comprensibles en ciertos contextos, siempre que no afecten ', ln=True) 
-                        pdf.cell(200, 10, 'significativamente el desarrollo académico de los alumnos. ', ln=True)   
+                        pdf.cell(200, 10, 'ya que permite la continuidad de los contenidos y facilita el progreso de los estudiantes en las ', ln=True) 
+                        pdf.cell(200, 10, 'materias impartidas. Sin embargo, las ausencias también son comprensibles en ciertos contextos,', ln=True) 
+                        pdf.cell(200, 10, 'siempre que no afecten significativamente el desarrollo académico de los alumnos. ', ln=True)   
                         pdf.output('Reporte_profe.pdf')
 
                         
