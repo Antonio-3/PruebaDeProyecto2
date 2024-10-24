@@ -379,24 +379,24 @@ if seleccion_menu == "Administrador":
                 options=["Agregar Datos","Eliminar Datos"]
         )
 
-            maestros_por_materia = {
-        "ISET": {
-            "Introducción a la Electronica": "Carlos Martínez",
-            "Programación icónica": "Laura Gómez",
-            "Proyectos de Ingenieria": "Miguel Sánchez",
-            "Electronica de Potencia": "Ana Torres",
-            "Emprendimiento": "Sofía Rodríguez",
-            "Inglés V": "Pedro Hernández"
-        },
-        "ICI": {
-            "Fundamentos de Programación": "Walter Mata",
-            "Estadística": "Victor Castillo",
-            "Programación": "Walter Mata",
-            "Estructura de Datos": "Francisco Ochoa",
-            "Programación Avanzada": "Walter Mata",
-            "Robótica": "Quintero"
+        maestros_por_materia = {
+                "ISET": {
+                        "Introducción a la Electronica": "Carlos Martínez",
+                        "Programación icónica": "Laura Gómez",
+                        "Proyectos de Ingenieria": "Miguel Sánchez",
+                        "Electronica de Potencia": "Ana Torres",
+                        "Emprendimiento": "Sofía Rodríguez",
+                        "Inglés V": "Pedro Hernández"
+                },
+                "ICI": {
+                        "Fundamentos de Programación": "Walter Mata",
+                        "Estadística": "Victor Castillo",
+                        "Programación": "Walter Mata",
+                        "Estructura de Datos": "Francisco Ochoa",
+                        "Programación Avanzada": "Walter Mata",
+                        "Robótica": "Quintero"
+                }
         }
-    }
     
     if seleccion_admin == "Agregar Datos":
         st.write("Agregar Datos")
