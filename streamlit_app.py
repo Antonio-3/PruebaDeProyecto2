@@ -168,6 +168,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(20, 10, str(materia[6]), 1)    
                             pdf.ln()
                         # Guardar el archivo PDF
+                        pdf.cell(200, 10, '', ln=True)
                         pdf.cell(200, 10, 'El profesor ' + materia[1]+ ' imparte un total de ' +ConvertioXD_numero+ '  materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
                         pdf.cell(200, 10, 'Durante el periodo de tiempo desde: ' +ConvertioXD_FCHMN+ ' - '+ConvertioXD_FCHMX+' , el profesor ha', ln=True)
