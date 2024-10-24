@@ -32,7 +32,11 @@ if seleccion_menu == "":
         st.title("Bienvenidos a nuestro proyecto :)")
         st.write("Somos Antonio, Perla , Josue y Danahy, estudiantes de la Universidad De Colima. ")
         st.write("\n")
-        st.write("Este proyecto tiene como objetivo crear un programa para que un admistrador pueda consultar o asignar las faltas de asistencia de profesores, materias, o dependiendo del programa educativo")
+        st.write("Este proyecto tiene como objetivo crear un programa para que un jefe de grupo pueda asignar las asistencias de los maestros dependiendo de su carrera")
+        st.write("\n")
+        st.write("Tambien puede realizar 3 tipos de reportes como: Reporte por profesor, Reporte por materia Y reporte global que ese realize un calculo para que te de el pocentaje de asistencias en las 2 carreras")
+        st.write("\n")
+        st.write("Para el administrador, lo unico que puede hacer es añadir nuevos datos o eliminar datos de la base de datos")
         st.write("\n")
         st.write("A lo largo de esta página, encontrarás información sobre nuestro trabajo, ideas y logros a lo largo del proceso. Esperamos que disfrutes navegando por nuestra página y descubras más sobre este proyecto.")
 
