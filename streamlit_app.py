@@ -300,7 +300,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Guardar el archivo PDF
                         
                         pdf.cell(200, 10, 'La tasa de cumplimiento de asistencias en las carreras ICI y ISET es cerca del: ' + str(materia[0]) + '% y ', ln=True, align='C')
-                         pdf.cell(200, 10, 'Cera del: 12% de incumplimieto de asistencas ', ln=True, align='C')
+                        pdf.cell(200, 10, 'Cera del: 12% de incumplimieto de asistencas ', ln=True, align='C')
                         pdf.output('Reporte_Global.pdf')
                         
                         # Cerrar la conexión
