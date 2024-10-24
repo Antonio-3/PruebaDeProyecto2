@@ -295,7 +295,7 @@ if seleccion_menu == "Jefe de grupo":
                         
                         # Agregar los registros de materias al PDF con ajustes
                         for materia in materiaprofe:
-                            pdf.cell(10, 10, str(materia[0]), 1)  
+                            pdf.cell(45, 10, str(materia[0]), 1)  
                             pdf.ln()
                         # Guardar el archivo PDF
                         
