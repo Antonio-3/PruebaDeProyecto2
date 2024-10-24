@@ -425,8 +425,12 @@ if seleccion_menu == "Administrador":
                 conexion.commit()
                 st.success(f"Clase programada para {materia} con {maestro} el {fecha} a las {hora} ha sido agregada exitosament.")
                 conexion.close()
-
-        if seleccion_admin == "Eliminar Datos":
+                        
+        if st.button("Eliminar Clase"):
+                cursor.execute("DELETE FROM clases_programadas WHERE id=?", (id_clase_seleccionada,))
+                conexion.commit()
+                st.success("Clase eliminada exitosamente.")
+                if seleccion_admin == "Eliminar Datos":
                 st.write("Eliminar Clases Programadas")
                 conexion = sqlite3.connect('asistencias.db')
                 cursor = conexion.cursor()
@@ -437,11 +441,6 @@ if seleccion_menu == "Administrador":
                         clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_mostradas)
                         id_clase_seleccionada = clases_programadas[clases_mostradas.index(clase_seleccionada)][0]
 
-                        
-        if st.button("Eliminar Clase"):
-                cursor.execute("DELETE FROM clases_programadas WHERE id=?", (id_clase_seleccionada,))
-                conexion.commit()
-                st.success("Clase eliminada exitosamente.")
         else:
                 st.info("No hay clases programadas para eliminar.")
                 conexion.close()
