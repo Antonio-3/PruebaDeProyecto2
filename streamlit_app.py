@@ -303,13 +303,13 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
 
-                        pdf.cell(width, 10, text, ln=True, align='C') for width, text in zip([200, 200, 200, 200, 200], [
+                         [ pdf.cell(width, 10, text, ln=True, align='C') for width, text in zip([200, 200, 200, 200, 200], [
                             'La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al ' + str(materia[0]) + '%.',
                             'Este porcentaje refleja un compromiso moderado de los docentes con su responsabilidad de asistir a',
                             'clases y cumplir con sus horarios. La asistencia regular de los maestros es fundamental para ',
                             'garantizar la continuidad del proceso educativo y el apoyo a los estudiantes, ya que su presencia es',
                             'crucial para el desarrollo de las actividades académicas'
-                        ])
+                        ]) ]
         
                         pdf.output('Reporte_Global.pdf')
                         
