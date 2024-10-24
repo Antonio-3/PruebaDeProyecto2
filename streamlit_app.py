@@ -378,6 +378,74 @@ if seleccion_menu == "Administrador":
                 menu_title="Que desea hacer?",
                 options=["Agregar Datos","Eliminar Datos"]
         )
+
+        maestros_por_materia = {
+        "ISET": {
+            "Introducción a la Electronica": "Carlos Martínez",
+            "Programación icónica": "Laura Gómez",
+            "Proyectos de Ingenieria": "Miguel Sánchez",
+            "Electronica de Potencia": "Ana Torres",
+            "Emprendimiento": "Sofía Rodríguez",
+            "Inglés V": "Pedro Hernández"
+        },
+        "ICI": {
+            "Fundamentos de Programación": "Walter Mata",
+            "Estadística": "Victor Castillo",
+            "Programación": "Walter Mata",
+            "Estructura de Datos": "Francisco Ochoa",
+            "Programación Avanzada": "Walter Mata",
+            "Robótica": "Quintero"
+        }
+    }
+    
+    if seleccion_admin == "Agregar Datos":
+        st.write("Agregar Datos")
+        conexion = sqlite3.connect('asistencias.db')
+        cursor = conexion.cursor()
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS clases_programadas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            maestro TEXT,
+            materia TEXT,
+            fecha TEXT,
+            hora TEXT
+        )
+        ''')
+        conexion.commit()
+        maestro = st.selectbox("Selecciona un maestro:", ["Carlos Martínez", "Laura Gómez", "Miguel Sánchez", "Ana Torres", "Sofía Rodríguez", "Pedro Hernández", "Walter Mata", "Victor Castillo", "Francisco Ochoa", "Quintero",])
+        materia = st.selectbox("Selecciona una materia:", ["Introducción a la Electrónica", "Programación icónica", "Proyectos de Ingeniería", "Electrónica de Potencia", "Emprendimiento", "Inglés V", "Fundamentos de Programación", "Estadística", "Programación", "Estructura de Datos", "Programación Avanzada", "Robótica"])
+        fecha = st.date_input("Selecciona la fecha de la clase:")
+        hora = st.time_input("Selecciona la hora de la clase:")
+
+        if st.button("Agregar Clase"):
+          cursor.execute('''
+              INSERT INTO clases_programadas (maestro, materia, fecha, hora)
+              VALUES (?, ?, ?, ?)
+          ''', (maestro, materia, str(fecha), str(hora)))
+          conexion.commit()
+          st.success(f"Clase programada para {materia} con {maestro} el {fecha} a las {hora} ha sido agregada exitosament.")
+        conexion.close()
+
+        if seleccion_admin == "Eliminar Datos":
+                st.write("Eliminar Clases Programadas")
+                conexion = sqlite3.connect('asistencias.db')
+                cursor = conexion.cursor()
+                clases_programadas = cursor.execute("SELECT id, maestro, materia, fecha, hora FROM clases_programadas").fetchall()
+
+        if clases_programadas:
+                clases_mostradas = [f"{clase[1]} - {clase[2]} el {clase[3]} a las {clase[4]}" for clase in clases_programadas]
+                clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_mostradas)
+                id_clase_seleccionada = clases_programadas[clases_mostradas.index(clase_seleccionada)][0]
+
+        if st.button("Eliminar Clase"):
+                cursor.execute("DELETE FROM clases_programadas WHERE id=?", (id_clase_seleccionada,))
+                conexion.commit()
+                st.success("Clase eliminada exitosamente.")
+        else:
+                st.info("No hay clases programadas para eliminar.")
+                conexion.close()
+
+            
         if seleccion_admin == "Agregar Datos":
                 st.write("Agregar Datos")
                         
