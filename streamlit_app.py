@@ -114,7 +114,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
-                        ConvertioXD = srt(Cantidadmateriasprofe)
+                        ConvertioXD = str(Cantidadmateriasprofe)
                         # Crear una instancia de FPDF
                         pdf = FPDF()
                         pdf.set_auto_page_break(auto=True, margin=15)
