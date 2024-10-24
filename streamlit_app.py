@@ -107,9 +107,8 @@ if seleccion_menu == "Jefe de grupo":
                 def generar_pdf():
                         # Conectar a la base de datos
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                        conexion2 = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
-                        cursor2 = conexion2.cursor()
+                        cursor2 = conexion.cursor()
                         cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         cursor2.execute("SELECT COUNT(Materia) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         # Recuperar todos los registros
@@ -151,7 +150,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'El profesor ' + str(materia[1]) + ' imparte un total de ' + Cantidadmateriasprofe + ' materias, cubriendo diferentes áreas', ln=True)
+                        pdf.cell(200, 10, 'El profesor ' + str(materia[1]) + ' imparte un total de ' + str(Cantidadmateriasprofe) + ' materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
                         pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo,', ln=True)
                         pdf.cell(200, 10, 'asistiendo a'+'clases de las programadas. No obstante, ha tenido '+'ausencias, lo cual puede deberse', ln=True)
