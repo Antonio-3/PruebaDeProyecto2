@@ -55,14 +55,16 @@ if seleccion_menu == "Jefe de grupo":
         """
         st.caption("Bienvenido Jefe de grupo!")
         seleccion_jefe = option_menu(
-                menu_title="Seleccione su carrera",
-                options=["ICI","ISET"]
+                menu_title="Apartado de Asistencias",
+                options=["Asignar Asistencia","Modificar Asistencia"]
         )
-        if seleccion_jefe == "ICI":
-                st.write("ICI")
+        
+        if seleccion_jefe == "Asignar Asistencia":
+                st.write("Asignar asistencias")
                         
-        if seleccion_jefe == "ISET":
-                st.write("ISET")
+        if seleccion_jefe == "Modificar Asistencia":
+                st.write("Modificar asistencias")
+                
         st.write("  \n")
         st.write("  \n")
         st.write("  \n")
@@ -211,9 +213,6 @@ if seleccion_menu == "Jefe de grupo":
 
 
 
-
-        
-        
                         
         if seleccion_reporte == "Reporte por materia":
                 st.write("  \n")
