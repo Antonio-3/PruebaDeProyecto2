@@ -398,7 +398,7 @@ if seleccion_menu == "Administrador":
                 }
         }
     
-            if seleccion_admin == "Agregar Datos":
+        if seleccion_admin == "Agregar Datos":
                 st.write("Agregar Datos")
                 conexion = sqlite3.connect('asistencias.db')
                 cursor = conexion.cursor()
