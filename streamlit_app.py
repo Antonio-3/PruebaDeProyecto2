@@ -117,8 +117,8 @@ if seleccion_menu == "Jefe de grupo":
                         cursor2.execute("SELECT COUNT(Materia) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         cursor3.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=1",(seleccion_profeexd,))
                         cursor4.execute("SELECT COUNT(Asistencia) FROM materiaprofe WHERE Profesor=? AND Asistencia=0",(seleccion_profeexd,))
-                        cursor5.execute("SELECT MIN(Fecha) FROM materiaprofe WHERE Profesor = Juan Pérez",(seleccion_profeexd,))
-                        cursor6.execute("SELECT MAX(Fecha) FROM materiaprofe WHERE Profesor = Juan Pérez",(seleccion_profeexd,))
+                        cursor5.execute("SELECT MIN(Fecha) FROM materiaprofe WHERE Profesor =?",(seleccion_profeexd,))
+                        cursor6.execute("SELECT MAX(Fecha) FROM materiaprofe WHERE Profesor =?",(seleccion_profeexd,))
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
