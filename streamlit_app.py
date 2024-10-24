@@ -298,13 +298,15 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(60, 10, str(materia[0]) + '%', 1)  
                             pdf.ln()
                         # Guardar el archivo PDF
-                        
-                        pdf.cell(200, 10, 'La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al ' + str(materia[0]) + '%.', ln=True, align='C')
-                        pdf.cell(160, 10, 'Este porcentaje refleja un compromiso moderado de los docentes con su responsabi', ln=True, align='C')
-                        pdf.cell(150, 10, 'lidad de asistir a clases y cumplir con sus horarios. La asistencia regular de  ', ln=True, align='C')
-                        pdf.cell(160, 10, 'los maestros es fundamental para garantizar la continuidad del proceso educativo', ln=True, align='C')
-                        pdf.cell(150, 10, 'y el apoyo a los estudiantes, ya que su presencia es crucial para el desarrollo', ln=True, align='C')
-                        pdf.cell(60, 10, 'de las actividades académicas.', ln=True, align='C')
+
+                        [ pdf.cell(width, 10, text, ln=True, align='C') for width, text in zip([200, 160, 150, 160, 150, 60], [
+                            'La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al ' + str(materia[0]) + '%.',
+                            'Este porcentaje refleja un compromiso moderado de los docentes con su responsabi',
+                            'lidad de asistir a clases y cumplir con sus horarios. La asistencia regular de',
+                            'los maestros es fundamental para garantizar la continuidad del proceso educativo',
+                            'y el apoyo a los estudiantes, ya que su presencia es crucial para el desarrollo',
+                            'de las actividades académicas.'
+                        ]) ]
                         pdf.output('Reporte_Global.pdf')
                         
                         # Cerrar la conexión
