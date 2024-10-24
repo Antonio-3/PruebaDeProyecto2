@@ -119,7 +119,7 @@ if seleccion_menu == "Jefe de grupo":
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
                         Asistidamateriaprofe = cursor3.fetchall()
-                        Faltamateriaprofe = cursor3.fetchall()
+                        Faltamateriaprofe = cursor4.fetchall()
                         # Extraer el primer valor si es una tupla
                         ConvertioXD_numero = str(Cantidadmateriasprofe[0]) if isinstance(Cantidadmateriasprofe, (tuple, list)) else str(Cantidadmateriasprofe)
                         ConvertioXD_Asistencia = str(Asistidamateriaprofe[0]) if isinstance(Asistidamateriaprofe, (tuple, list)) else str(Asistidamateriaprofe) 
