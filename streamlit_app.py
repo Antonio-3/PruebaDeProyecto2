@@ -174,9 +174,10 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(200, 10, 'Durante el periodo de tiempo desde: ' +ConvertioXD_FCHMN+ ' - '+ConvertioXD_FCHMX+' , el profesor ha', ln=True)
                         pdf.cell(200, 10, 'demostrado un alto nivel de compromiso con su trabajo, asistiendo a '+ConvertioXD_Asistencia+' clases de las programadas.', ln=True)
                         pdf.cell(200, 10, 'No obstante, ha tenido '+ConvertioXD_Falta+' ausencias, lo cual puede deberse a diversas circunstancias, como asuntos', ln=True)
-                        pdf.cell(200, 10, 'personales o imprevistos, que en ocasiones son inevitables. ya que permite la continuidad de los contenidos y', ln=True) 
-                        pdf.cell(200, 10, 'facilita el progreso de los estudiantes en las  materias impartidas. Sin embargo, las ausencias también', ln=True) 
-                        pdf.cell(200, 10, 'son comprensibles en ciertos contextos,siempre que no afecten significativamente el desarrollo académico de los alumnos. ', ln=True)   
+                        pdf.cell(200, 10, 'personales o imprevistos, que en ocasiones son inevitables. ya que permite la continuidad', ln=True) 
+                        pdf.cell(200, 10, 'de los contenidos y facilita el progreso de los estudiantes en las  materias impartidas. ', ln=True) 
+                        pdf.cell(200, 10, 'Sin embargo, las ausencias también son comprensibles en ciertos contextos,siempre que no afecten significativamente el ', ln=True) 
+                        \pdf.cell(200, 10, 'desarrollo académico de los alumnos. ', ln=True)  
                         pdf.output('Reporte_profe.pdf')
 
                         
