@@ -114,6 +114,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
+                        ConvertioXD = srt(Cantidadmateriasprofe)
                         # Crear una instancia de FPDF
                         pdf = FPDF()
                         pdf.set_auto_page_break(auto=True, margin=15)
@@ -150,7 +151,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'El profesor ' + materia[1]+ ' imparte un total de ' + (Cantidadmateriasprofe) + ' materias, cubriendo diferentes áreas', ln=True)
+                        pdf.cell(200, 10, 'El profesor ' + materia[1]+ ' imparte un total de ' + ConvertioXD + ' materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
                         pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo,', ln=True)
                         pdf.cell(200, 10, 'asistiendo a'+'clases de las programadas. No obstante, ha tenido '+'ausencias, lo cual puede deberse', ln=True)
