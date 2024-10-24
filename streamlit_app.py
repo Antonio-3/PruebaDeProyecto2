@@ -110,7 +110,7 @@ if seleccion_menu == "Jefe de grupo":
                         cursor = conexion.cursor()
                         cursor2 = conexion.cursor()
                         cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
-                        cursor2.execute("SELECT COUNT(Materias) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
+                        cursor2.execute("SELECT COUNT(Materia) FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         Cantidadmateriasprofe = cursor2.fetchall()
