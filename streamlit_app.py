@@ -147,7 +147,7 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(200, 10, 'El profesor ' + str(materia[0]) + ' imparte un total de' + 'materias, cubriendo diferentes áreas', ln=True)
+                        pdf.cell(200, 10, 'El profesor ' + str(materia[1]) + ' imparte un total de' + 'materias, cubriendo diferentes áreas', ln=True)
                         pdf.cell(200, 10, 'de estudio que son de gran relevancia para los estudiantes en su desarrollo académico', ln=True)
                         pdf.cell(200, 10, 'Durante el periodo de' + ', el profesor ha demostrado un alto nivel de compromiso con su trabajo, asistiendo a'+'clases de las programadas.', ln=True)
                         pdf.cell(200, 10, 'No obstante, ha tenido'+'ausencias, lo cual puede deberse a diversas circunstancias, como asuntos personales o imprevistos, que en ocasiones son inevitables.', ln=True)
