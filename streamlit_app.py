@@ -270,7 +270,7 @@ if seleccion_menu == "Jefe de grupo":
                 st.write("  \n")
                 st.write("  \n")
                 st.write("  \n")
-                st.title("Reporte por materia")
+                st.title("Reporte Global")
                 # Función para generar el PDF
                 def generar_pdf():
                         # Conectar a la base de datos
