@@ -177,7 +177,7 @@ if seleccion_menu == "Jefe de grupo":
                         pdf.cell(200, 10, 'personales o imprevistos, que en ocasiones son inevitables. ya que permite la continuidad', ln=True) 
                         pdf.cell(200, 10, 'de los contenidos y facilita el progreso de los estudiantes en las  materias impartidas. ', ln=True) 
                         pdf.cell(200, 10, 'Sin embargo, las ausencias también son comprensibles en ciertos contextos,siempre que no afecten significativamente el ', ln=True) 
-                        \pdf.cell(200, 10, 'desarrollo académico de los alumnos. ', ln=True)  
+                        pdf.cell(200, 10, 'desarrollo académico de los alumnos. ', ln=True)  
                         pdf.output('Reporte_profe.pdf')
 
                         
