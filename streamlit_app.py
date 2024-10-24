@@ -432,10 +432,10 @@ if seleccion_menu == "Administrador":
                 cursor = conexion.cursor()
                 clases_programadas = cursor.execute("SELECT id, maestro, materia, fecha, hora FROM clases_programadas").fetchall()
 
-        if clases_programadas:
-                clases_mostradas = [f"{clase[1]} - {clase[2]} el {clase[3]} a las {clase[4]}" for clase in clases_programadas]
-                clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_mostradas)
-                id_clase_seleccionada = clases_programadas[clases_mostradas.index(clase_seleccionada)][0]
+                if clases_programadas:
+                        clases_mostradas = [f"{clase[1]} - {clase[2]} el {clase[3]} a las {clase[4]}" for clase in clases_programadas]
+                        clase_seleccionada = st.selectbox("Selecciona la clase a eliminar:", clases_mostradas)
+                        id_clase_seleccionada = clases_programadas[clases_mostradas.index(clase_seleccionada)][0]
 
                         
         if st.button("Eliminar Clase"):
