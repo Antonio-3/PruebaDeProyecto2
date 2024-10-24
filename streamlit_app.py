@@ -157,7 +157,7 @@ if seleccion_menu == "Jefe de grupo":
                         st.download_button(
                                 label="Descargar Reporte en PDF",
                                 data=pdf_content,
-                                file_name="Reporte_Materia_Profe.pdf",
+                                file_name="Reporte_Profe.pdf",
                                 mime="application/pdf"
                         )
 
