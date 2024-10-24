@@ -298,17 +298,6 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.cell(60, 10, str(materia[0]) + '%', 1)  
                             pdf.ln()
                         # Guardar el archivo PDF
-                        La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al [] %
-                        Este porcentaje refleja un compromiso moderado de los docentes con su responsabilidad de asistir a clases y cumplir con sus horarios. 
-                        La asistencia regular de los maestros es fundamental para garantizar la continuidad del proceso educativo y el apoyo a los estudiantes, ya que su presencia es crucial para el desarrollo de las actividades académicas.
-                        
-                        Por otro lado, se observa que aproximadamente el [] % de incumplimiento en las asistencias de los maestros puede deberse a diversas razones, como compromisos personales, situaciones de salud o emergencias. 
-                        Este índice de falta de asistencia puede afectar no solo la calidad de la enseñanza, sino también la dinámica general del aula y el rendimiento de los estudiantes.
-                        
-                        Es esencial que se implementen estrategias para mejorar este aspecto, ya que una mayor presencia de los docentes puede contribuir significativamente a un ambiente de aprendizaje más efectivo y motivador. 
-
-
-                        
                         
                         pdf.cell(200, 10, 'La tasa de cumplimiento de asistencias de las carreras ICI y ISET es cercana al ' + str(materia[0]) + '%.', ln=True, align='C')
                         pdf.cell(200, 10, 'Este porcentaje refleja un compromiso moderado de los docentes con su responsabilidad de asistir a clases y cumplir con sus horarios. ', ln=True, align='C')
