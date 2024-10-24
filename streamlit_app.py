@@ -172,17 +172,16 @@ if seleccion_menu == "Jefe de grupo":
         
                         
         if seleccion_reporte == "Reporte por materia":
-                st.write("Reporte por materia")
                 st.write("  \n")
                 st.write("  \n")
                 st.write("  \n")
                 st.write("  \n")
-                st.title("Reporte por profesor")
+                st.title("Reporte por materia")
                 # Conectar a la base de datos
                 conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
-                df = pd.read_sql("SELECT DISTINCT Profesor FROM materiaprofe;", conexion)
+                df = pd.read_sql("SELECT DISTINCT Materia FROM materiaprofe;", conexion)
                 st.write("  \n")
-                seleccion_profeexd = st.selectbox('Selecciona un profesor:', df['Profesor'])
+                seleccion_materiaxd = st.selectbox('Selecciona un profesor:', df['Materia'])
                 cursor = conexion.cursor()
                 conexion.close()
                 # Función para generar el PDF
@@ -190,7 +189,7 @@ if seleccion_menu == "Jefe de grupo":
                         # Conectar a la base de datos
                         conexion = sqlite3.connect('BasePrueba/ProfesoresPrueba.db')
                         cursor = conexion.cursor()
-                        cursor.execute("SELECT * FROM materiaprofe WHERE Profesor=?",(seleccion_profeexd,))
+                        cursor.execute("SELECT * FROM materiaprofe WHERE Materia=?",(seleccion_materiaxd,))
                         # Recuperar todos los registros
                         materiaprofe = cursor.fetchall()
                         # Crear una instancia de FPDF
@@ -229,8 +228,8 @@ if seleccion_menu == "Jefe de grupo":
                             pdf.ln()
                         # Guardar el archivo PDF
                         
-                        pdf.cell(20, 10, 'El profesor: ', ln=True, align='C')
-                        pdf.cell(20, 10, seleccion_profeexd, ln=False, align='C')
+                        pdf.cell(20, 10, 'La materia: ', ln=True, align='C')
+                        pdf.cell(20, 10, seleccion_materiaxd, ln=False, align='C')
                         pdf.output('Reporte_profe.pdf')
                         
                         # Cerrar la conexión
@@ -246,7 +245,7 @@ if seleccion_menu == "Jefe de grupo":
                         st.download_button(
                                 label="Descargar Reporte en PDF",
                                 data=pdf_content,
-                                file_name="Reporte_Materia_Profe.pdf",
+                                file_name="Reporte_Materia.pdf",
                                 mime="application/pdf"
                         )
                         
