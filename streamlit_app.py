@@ -7,7 +7,7 @@ import mysql.connector
 import datetime
 
 st.sidebar.image(image='img/LogoPerla.png',caption="")
-st.sidebar.caption("Bienvenido Admin!.")
+st.sidebar.caption("Bienvenido!.")
 
 with st.sidebar:
         beta_sign = """
@@ -16,8 +16,8 @@ with st.sidebar:
         font-weight: bold;
         color: #ffffff;
         background-color: #ff5733;
-        padding: 15px;
-        border-radius: 5px;
+        padding: 20px;
+        border-radius: 10px;
         ">
             BETA
         </span>
