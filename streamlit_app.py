@@ -414,7 +414,7 @@ if seleccion_menu == "Administrador":
                 conexion.commit()
                 maestro = st.selectbox("Selecciona un maestro:", ["Carlos Martínez", "Laura Gómez", "Miguel Sánchez", "Ana Torres", "Sofía Rodríguez", "Pedro Hernández", "Walter Mata", "Victor Castillo", "Francisco Ochoa", "Quintero",])
                 materia = st.selectbox("Selecciona una materia:", ["Introducción a la Electrónica", "Programación icónica", "Proyectos de Ingeniería", "Electrónica de Potencia", "Emprendimiento", "Inglés V", "Fundamentos de Programación", "Estadística", "Programación", "Estructura de Datos", "Programación Avanzada", "Robótica"])
-                fecha = st.date_input(label="Selecciona la fecha de la clase:", value="default_value_today", min_value="default_value_today", max_value=None)
+                fecha = st.date_input(label="Selecciona la fecha de la clase:", min_value="default_value_today")
                 hora = st.time_input("Selecciona la hora de la clase:")
         
                 if st.button("Agregar Clase"):
