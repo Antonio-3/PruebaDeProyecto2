@@ -15,7 +15,7 @@ with st.sidebar:
         font-size: 12px;
         font-weight: bold;
         color: #ffffff;
-        background-color: #ff5733;
+        background-color: blue;
         padding: 20px;
         border-radius: 10px;
         ">
