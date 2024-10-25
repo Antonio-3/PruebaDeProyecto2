@@ -47,7 +47,7 @@ if seleccion_menu == "Jefe de grupo":
         font-size: 10px;
         font-weight: bold;
         color: #ffffff;
-        background-color: #ff5733;
+        background-color: blue;
         padding: 5px 10px;
         border-radius: 4px;
         ">
