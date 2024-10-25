@@ -2,3 +2,4 @@ streamlit
 streamlit-option-menu
 fpdf
 mysql-connector-python
+datetime
